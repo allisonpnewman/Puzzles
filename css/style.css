@@ -1,0 +1,323 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    background-color: rgb(57, 57, 62);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-size: 80%;
+    color: rgb(194, 194, 194);
+}
+
+div#puzzle-selection {
+    width: 800px;
+    margin: 0 auto;
+}
+
+div#puzzle-selection button {
+    display: block;
+    font-size: 300%;
+    padding: 10px 30px 10px 30px;
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+div#puzzle-selection p {
+    font-size: 120%;
+    background-color: black;
+    color: white;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+div#game-status {
+    background-color: black;
+    height: 80px;
+    width: 800px;
+    margin: -7px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+div#game-status span#timer {
+    margin-left: 40px;
+}
+
+div#game-status.solved {
+    background-color: green;
+}
+
+div#game-status.incorrect {
+    background-color: red;
+}
+
+div#game-status span {
+    color: white;
+    font-size: 150%;
+}
+
+div#game-status button {
+    padding: 10px 25px 10px 25px;
+    font-size: 120%;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+div#game-status button:hover {
+    background-color: rgb(169, 169, 169);
+    border-color: rgb(169, 169, 169);
+}
+
+div#game-status button:active {
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+
+div#game-status button:disabled {
+    background-color: green;
+    border: 1px solid darkgray;
+    color: darkgray;
+}
+
+table#puzzle {
+    width: 800px;
+    empty-cells: show;
+    margin: 10px auto;
+    background-color: black;
+    border: 5px solid black;
+    border-spacing: 0;
+    color: white;
+    font-size: 300%;
+}
+
+table#puzzle th {
+    font-weight: normal;
+}
+
+table#puzzle td {
+    border: 1px solid darkgray;
+    text-align: center;
+}
+
+table#puzzle td.fixed {
+    color: darkgray;
+}
+
+table#puzzle td.filled {
+    background-color: white;
+}
+
+table#puzzle td.filled.fixed {
+    background-color: darkgrey;
+}
+
+table#puzzle td.tree {
+    background-image: url('../images/tree.png');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+table#puzzle td.dot {
+    background-image: url('../images/dot.png');
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+table#puzzle td.planet-dark {
+    background-image: url('../images/dark-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+table#puzzle td.planet-left {
+    background-image: url('../images/half-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+table#puzzle td.planet-right {
+    background-image: url('../images/half-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scaleX(-1);
+}
+
+table#puzzle td.planet-top {
+    background-image: url('../images/half-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(90deg);
+}
+
+table#puzzle td.planet-bottom {
+    background-image: url('../images/half-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-90deg);
+}
+
+table#puzzle td.planet-top-left {
+    background-image: url('../images/three-quarter-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scaleY(-1);
+}
+
+table#puzzle td.planet-top-right {
+    background-image: url('../images/three-quarter-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(-1, -1);
+}
+
+table#puzzle td.planet-bottom-left {
+    background-image: url('../images/three-quarter-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+table#puzzle td.planet-bottom-right {
+    background-image: url('../images/three-quarter-planet.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scaleX(-1);
+}
+
+table#puzzle td.star {
+    background-image: url('../images/star.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+table#puzzle td.nebula {
+    background-image: url('../images/nebula.png');
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.selected {
+    background-color: rgb(54, 54, 54);
+}
+
+.region1 {
+    background-color: #bd1e24;
+}
+
+.region1.selected {
+    background-color: #841518;
+}
+
+.region2 {
+    background-color: #0067a7;
+}
+
+.region2.selected {
+    background-color: #003f66;
+}
+
+.region3 {
+    background-color: #f6c700;
+}
+
+.region3.selected {
+    background-color: #b39200;
+}
+
+.region4 {
+    background-color: #007256;
+}
+
+.region4.selected {
+    background-color: #004d39;
+}
+
+.region5 {
+    background-color: #e99700;
+}
+
+.region5.selected {
+    background-color: #935e03;
+}
+
+.region6 {
+    background-color: #964f8e;
+}
+
+.region6.selected {
+    background-color: #64355f;
+}
+
+.region7 {
+    background-color: #ff7792;
+}
+
+.region7.selected {
+    background-color: #ff4d70;
+}
+
+.region8 {
+    background-color: #866248;
+}
+
+.region8.selected {
+    background-color: #533d2d;
+}
+
+.region9 {
+    background-color: #4ea4c6;
+}
+
+.region9.selected {
+    background-color: #327d9a;
+}
+
+.region10 {
+    background-color: #66ac66;
+}
+
+.region10.selected {
+    background-color: #467946;
+}
+
+.region11 {
+    background-color: #8a57dc;
+}
+
+.region11.selected {
+    background-color: #6e47ae;
+}
+
+.region12 {
+    background-color: #de661b;
+}
+
+.region12.selected {
+    background-color: #b3551a;
+}
